@@ -8,3 +8,16 @@ body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+input,
+button {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+input {
+  padding: 12px;
+  border: none;
+  box-shadow: inset 2px 2px 8px #1111115d;
+  border-radius: 20px 0 0 0;
+  outline: none;
+}

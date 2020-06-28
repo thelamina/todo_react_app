@@ -1,0 +1,38 @@
+.Todo-Item {
+  background-color: #943838;
+  margin: auto;
+  margin: 10px 0;
+  padding: 20px;
+  border-radius: 20px 0 0 0;
+  box-shadow: 3px 3px 4px 0px #0000005d;
+  transition: 'box-shadow' 0.5s;
+  color: #fff;
+  /* cursor: pointer; */
+}
+
+.Todo-Item:hover {
+  box-shadow: inset 1px 1px 10px 3px #000000;
+}
+
+.Todo-Item p{
+  display: inline-block;
+  width: 58%;
+}
+
+.Todo-Item button{
+  outline: none;
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 0 10px 0 0 ;
+
+}
+
+.Todo-Item .Edit{
+  color:#b1b1aa;
+}
+
+.Todo-Item .Delete{
+  color: #ff0000;
+}
