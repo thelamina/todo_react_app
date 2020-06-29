@@ -11,15 +11,30 @@ export class TodoApp extends Component {
     };
   }
 
-  submitHandler = (value) => {
+  AddTodoHandler = (value) => {
     this.setState({ todos: [...this.state.todos, { task: value, id: this.state.todos.length++ }] });
   };
+
+  updateTodo = (id, updatedTask)=>{
+    const updatedTodos = this.state.todos.map(todo=>{
+      if(todo.id === id){
+        return {...todo, task:updatedTask}
+      }
+      return todo;
+    })
+    this.setState({todos: updatedTodos})
+  }
+  
+  deleteTodo =(id)=>{
+    const updatedTodos = this.state.todos.filter(todo=> todo.id !== id)
+    this.setState({ todos: updatedTodos });
+  }
 
   render() {
     return (
       <div className='TodoApp'>
-        <TodoInput submit={this.submitHandler} />
-        <Todos items={this.state.todos} />
+        <TodoInput submit={this.AddTodoHandler} name="Add" label="New Todo"/>
+        <Todos items={this.state.todos} updateTodo={this.updateTodo} deleteTodo={this.deleteTodo}/>
       </div>
     );
   }

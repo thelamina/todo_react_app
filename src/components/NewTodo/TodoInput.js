@@ -5,7 +5,7 @@ class TodoInput extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: '',
+      input: this.props.input,
     };
   }
 
@@ -22,15 +22,16 @@ class TodoInput extends Component {
   render() {
     return (
       <div className='TodoInput'>
-        <label htmlFor='new-todo'>New Todo</label>
+        <label htmlFor='new-todo'>{this.props.label}</label>
         <input
           type='text'
           id='new-todo'
           value={this.state.input}
+          
           onChange={this.inputHandler}
         />
         <button type='submit' onClick={this.submitHandler}>
-          Add
+          {this.props.name}
         </button>
       </div>
     );

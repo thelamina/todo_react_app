@@ -1,14 +1,49 @@
-import React from 'react';
+import React, { Component } from 'react';
+import TodoInput from '../NewTodo/TodoInput';
 import './TodoItem.css';
 
-const todoItem = (props) => {
-  return (
-    <div className='Todo-Item'>
-      <p>{props.name}</p>
-      <button className="Edit">Edit</button>
-      <button className="Delete">Delete</button>
-    </div>
-  );
-};
+class TodoItem extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isEditing: false,
+      task: this.props.name,
+    };
+  }
 
-export default todoItem;
+  editHandler = () => {
+    this.setState({ isEditing: true });
+  };
+
+  deleteHandler = () => {
+    this.props.delete(this.props.id);
+  };
+
+  updateHandler = (task) => {
+    this.props.edit(this.props.id, task);
+    this.setState({ isEditing: false });
+  };
+
+  render() {
+    return this.state.isEditing ? (
+      <TodoInput
+        name='Save'
+        label='Edit Todo'
+        submit={this.updateHandler}
+        input={this.state.task}
+      />
+    ) : (
+      <div className='Todo-Item'>
+        <p>{this.props.name}</p>
+        <button className='Edit' onClick={this.editHandler}>
+          Edit
+        </button>
+        <button className='Delete' onClick={this.deleteHandler}>
+          Delete
+        </button>
+      </div>
+    );
+  }
+}
+
+export default TodoItem;
