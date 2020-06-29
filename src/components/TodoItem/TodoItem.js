@@ -39,7 +39,7 @@ class TodoItem extends Component {
           Edit
         </button>
         <button className='Delete' onClick={this.deleteHandler}>
-          Delete
+          X
         </button>
       </div>
     );

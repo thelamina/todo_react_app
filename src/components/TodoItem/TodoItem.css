@@ -14,25 +14,25 @@
   box-shadow: inset 1px 1px 10px 3px #000000;
 }
 
-.Todo-Item p{
+.Todo-Item p {
   display: inline-block;
-  width: 58%;
+  width: calc(100% - 60px);
 }
 
-.Todo-Item button{
+.Todo-Item button {
   outline: none;
   font-size: 16px;
   background: transparent;
   border: none;
   cursor: pointer;
-  margin: 0 10px 0 0 ;
-
+  margin: 0 10px 0 0;
 }
 
-.Todo-Item .Edit{
-  color:#b1b1aa;
+.Todo-Item .Edit {
+  color: #b9b976;
 }
 
-.Todo-Item .Delete{
-  color: #ff0000;
+.Todo-Item .Delete {
+  color: #f6f8e5;
+  font-weight: 900;
 }
