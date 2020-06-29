@@ -7,6 +7,7 @@ class TodoItem extends Component {
     super(props);
     this.state = {
       isEditing: false,
+      completed: false,
       task: this.props.name,
     };
   }
@@ -24,6 +25,10 @@ class TodoItem extends Component {
     this.setState({ isEditing: false });
   };
 
+  taskCompleted = () => {
+    this.setState({ completed: !this.state.completed });
+  };
+
   render() {
     return this.state.isEditing ? (
       <TodoInput
@@ -34,10 +39,17 @@ class TodoItem extends Component {
       />
     ) : (
       <div className='Todo-Item'>
-        <p>{this.props.name}</p>
-        <button className='Edit' onClick={this.editHandler}>
-          Edit
-        </button>
+        <p
+          onClick={this.taskCompleted}
+          className={this.state.completed ? 'completed' : ''}
+        >
+          {this.props.name}
+        </p>
+        {!this.state.completed && (
+          <button className='Edit' onClick={this.editHandler}>
+            Edit
+          </button>
+        )}
         <button className='Delete' onClick={this.deleteHandler}>
           X
         </button>

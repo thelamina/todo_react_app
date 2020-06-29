@@ -36,3 +36,9 @@
   color: #f6f8e5;
   font-weight: 900;
 }
+
+.completed{
+  text-decoration: line-through;
+  color: #969696;
+  font-style: italic;
+}
